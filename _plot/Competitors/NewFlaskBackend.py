@@ -1,8 +1,10 @@
+from flask import Flask, render_template
+from flask_socketio import SocketIO, emit
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import requests
-
 import pandas as pd
+import geopandas as gpd
 
 def create_table_for_competitors(data: dict):
 	global df
@@ -27,7 +29,7 @@ def get_coordinates(city_name):
 		return None
 
 def get_bounding_box(latitude, longitude, distance_km):
-# Calculate the bounding box coordinates
+	# Calculate the bounding box coordinates
 	start = geodesic(kilometers=distance_km)
 	bottom_left = start.destination((latitude, longitude), 225)
 	top_right = start.destination((latitude, longitude), 45)
@@ -47,17 +49,41 @@ def get_competitor_data(city_name):
 	data = resp.json()
 	return data
 
-def findTop5(dataframe, city_name):
+def findTopn(dataframe, city_name, n):
 	distances = []
 	storeLat, storeLon = get_coordinates(city_name)
 	for index, row in dataframe.iterrows():
 		lat = row['Latitude']
 		lon = row['Longitude']
 		distances.append(geodesic((storeLat, storeLon), (lat, lon)).kilometers)
-	df = df.assign(Distances = distances)
-	top5 = df.sort_values(by = 'Distances')[:5]
-	return top5
+	df = dataframe.assign(Distances = distances)
+	topn = df.sort_values(by = 'Distances')[:int(n)]
+	return topn
 
+app = Flask(__name__)
+socketio = SocketIO(app)
 
-city_name = "London"
-print(top5(get_competitor_data(city_name), city_name)
+@app.route('/')
+def index():
+	return render_template('map2.html')  
+
+@socketio.on('competitor_data_request')
+def handle_competitor_request(data):
+	city_name = data.get('city_name')
+	n = data.get('n')
+	print('request received')
+	df = findTopn(create_table_for_competitors(get_competitor_data(city_name)), city_name, n)
+	all_coordinates = {}
+	j = 0
+	for i, row in df.iterrows():
+		all_coordinates[f'lat{j}'] = row['Latitude']
+		all_coordinates[f'lon{j}'] = row['Longitude']
+		j += 1
+
+	all_coordinates['toZoomlat'] = get_coordinates(city_name)[0]
+	all_coordinates['toZoomlon'] = get_coordinates(city_name)[1]
+	print(all_coordinates)
+	emit('competitor_data_update', all_coordinates)
+
+if __name__ == '__main__':
+	socketio.run(app, debug=True)
