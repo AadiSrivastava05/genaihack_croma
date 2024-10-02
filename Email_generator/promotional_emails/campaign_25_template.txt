@@ -1,0 +1,8 @@
+Campaign ID: 25
+Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!

@@ -1,0 +1,237 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header styles */
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.header-icons {
+  display: flex;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #014753;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: #014753;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.menu {
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #1c7a8c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover, .menu-item.active {
+  background-color: #145f6a;
+}
+
+.menu-item i {
+  margin-right: 10px;
+}
+
+.bottom-menu {
+  margin-top: auto;
+}
+
+/* Main content styles */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* Chat assistant styles */
+.chat-assistant {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  padding: 15px;
+  background-color: #014753;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-header h3 {
+  margin: 0;
+}
+
+.chat-search {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-search input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-search button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-input button {
+  background-color: #014753;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Map styles */
+.map {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* How to use page styles */
+.how-to-use-container {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.how-to-use-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.how-to-use-container h1 {
+  margin-bottom: 20px;
+  color: #014753;
+}
+
+.how-to-use-container section {
+  margin-bottom: 30px;
+}
+
+.how-to-use-container h2 {
+  margin-bottom: 10px;
+  color: #1c7a8c;
+}
+
+.how-to-use-container p {
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: -1;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .chat-assistant, .map {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Error message styles */
+.error-message {
+  color: #d32f2f;
+  background-color: #ffcdd2;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}

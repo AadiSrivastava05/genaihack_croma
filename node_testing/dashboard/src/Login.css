@@ -1,0 +1,233 @@
+/* src/Login.css */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  }
+  
+    .login-wrapper {
+      height: 100vh;
+      width:100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #00bfffce, #3469dc);
+    }
+  
+  .login-page .login-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .login-page .logo {
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .login-page h2 {
+    margin: 10px 0 5px;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .login-page p {
+    margin: 0 0 20px;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  
+  .login-page .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 5px 15px;
+  }
+  
+  .login-page .input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    background: transparent;
+  }
+  
+  .login-page .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .login-page .remember-me input {
+    margin-right: 10px;
+  }
+  
+  .login-page .forgot-password-link {
+    color: white;
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .login-page .login-button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .login-page .login-button:hover {
+    background: #333;
+  }
+  
+  .login-page .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .login-page .create-account-link {
+    color: white;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  
+  /* 
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(to right, #1d1d5a, #5D5FEE);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .logo {
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin: 10px 0 5px;
+    color: white;
+    font-size: 24px;
+  }
+  
+  p {
+    margin: 0 0 20px;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 5px 15px;
+  }
+  
+  .input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    background: transparent;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .remember-me input {
+    margin-right: 10px;
+  }
+  
+  .forgot-password-link {
+    color: white;
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .login-button:hover {
+    background: #333;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .create-account-link {
+    color: white;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 14px;
+  } */

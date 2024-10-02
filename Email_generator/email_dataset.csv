@@ -1,0 +1,551 @@
+disount,product,msp,text
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+Time to upgrade your wardrobe? Our new [PRODUCT_NAME] collection from StylishThreads is here to make a statement! Shop now at just [MSP] and elevate your style."
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+Time to upgrade your wardrobe? Our new [PRODUCT_NAME] collection from StylishThreads is here to make a statement! Shop now at just [MSP] and elevate your style."
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+Time to upgrade your wardrobe? Our new [PRODUCT_NAME] collection from StylishThreads is here to make a statement! Shop now at just [MSP] and elevate your style."
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+Time to upgrade your wardrobe? Our new [PRODUCT_NAME] collection from StylishThreads is here to make a statement! Shop now at just [MSP] and elevate your style."
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+Time to upgrade your wardrobe? Our new [PRODUCT_NAME] collection from StylishThreads is here to make a statement! Shop now at just [MSP] and elevate your style."
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP]."
+PRESENT,PRESENT,NULL,"Dear [USER_NAME],
+
+Introducing our latest range of [PRODUCT_NAME] from StylishThreads. Even without a discount, you’ll love the new collection starting at [MSP]!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"
+NULL,NULL,NULL,"Hello [USER_NAME],
+
+It's time to refresh your style! For a limited time, we’re offering [DISCOUNT]% off on [PRODUCT_NAME] from StylishThreads.
+
+Now available at just [MSP].
+
+Happy shopping!"
+NULL,NULL,NULL,"Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!"

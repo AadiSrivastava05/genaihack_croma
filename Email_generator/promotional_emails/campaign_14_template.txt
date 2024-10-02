@@ -1,0 +1,6 @@
+Campaign ID: 14
+Dear [USER_NAME],
+
+Your wardrobe deserves an upgrade! Get [DISCOUNT]% off on the latest [PRODUCT_NAME] from StylishThreads. With prices as low as [MSP], there’s no better time to shop!
+
+Don't miss out!

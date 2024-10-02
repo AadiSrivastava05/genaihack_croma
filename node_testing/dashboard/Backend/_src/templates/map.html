@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map with GeoAPIfy</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- GeoAPIfy Tile Layer -->
+    <script src="https://unpkg.com/@geoapify/leaflet-geocoder-autocomplete@1.0.0/index.js"></script>
+
+    <!-- Include Socket.IO -->
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+
+    <div id="map" style="width: 100vw; height: 100vh;"></div>
+
+    <script>
+        // Initialize the map and set the initial view
+        var map = L.map('map').setView([20.5937, 78.9629], 5); // Default view set to India
+
+        // Your GeoAPIfy API key
+        const apiKey = '085e718f0205455db5cac133ebf11b34';
+
+        // Add GeoAPIfy tile layer
+        L.tileLayer(`https://maps.geoapify.com/v1/tile/osm-carto/{z}/{x}/{y}.png?apiKey=${apiKey}`, {
+            attribution: '&copy; <a href="https://www.geoapify.com/">GeoAPIfy</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+
+        // Connect to the WebSocket server
+        var socket = io();
+
+        // Listen for zoom_update events from the backend
+        socket.on('zoom_update', function(data) {
+            var lat = data.lat;
+            var lng = data.lng;
+            var zoom = data.zoom;
+
+            var lat1 = data.lat1;
+            var lng1 = data.lng1;
+
+            var lat2 = data.lat2;
+            var lng2 = data.lng2;
+
+            var lat3 = data.lat3;
+            var lng3 = data.lng3;
+
+            var lat4 = data.lat4;
+            var lng4 = data.lng4;
+
+            var lat5 = data.lat5;
+            var lng5 = data.lng5;
+
+            L.marker([lat1, lng1]).addTo(map)
+            L.marker([lat2, lng2]).addTo(map)
+            L.marker([lat3, lng3]).addTo(map)
+            L.marker([lat4, lng4]).addTo(map)
+            L.marker([lat5, lng5]).addTo(map)
+            
+            // Set new center and zoom level on the map
+            map.setView([lat, lng], zoom, { animate: true });
+        });
+
+        // Function to request a zoom update from the backend
+        function requestZoomUpdate() {
+            socket.emit('zoom_request', {}); // Can pass any necessary data here
+        }
+
+        // Call requestZoomUpdate every 5 seconds
+        setInterval(requestZoomUpdate, 5000);
+    </script>
+</body>
+</html>

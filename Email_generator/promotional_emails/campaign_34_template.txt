@@ -1,0 +1,4 @@
+Campaign ID: 34
+Hey [USER_NAME],
+
+New arrivals just for you! Check out our latest [PRODUCT_NAME] collection from StylishThreads. No discounts this time, but we’ve got the best prices on premium fashion with MSP starting at [MSP].

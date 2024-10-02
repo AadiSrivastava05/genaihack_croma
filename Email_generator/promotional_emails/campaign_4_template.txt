@@ -1,0 +1,8 @@
+Campaign ID: 4
+Hi [USER_NAME],
+
+Looking for new [PRODUCT_NAME]? We’ve got just the thing for you! Enjoy a special [DISCOUNT]% off on our latest collection of [PRODUCT_NAME] from StylishThreads.
+
+Grab it for only [MSP] and make a statement.
+
+Hurry, this offer ends soon!
