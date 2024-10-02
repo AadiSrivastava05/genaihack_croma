@@ -9,8 +9,6 @@ import geopandas as gpd
 from geopy.distance import geodesic
 import google.generativeai as genai
 from geopy.geocoders import Nominatim
-from supabase import create_client, Client
-from requests.structures import CaseInsensitiveDict
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 
@@ -79,25 +77,26 @@ def find_zoom_level(inputRegion: str) -> int:
 
 		- You're name is Cromax, an AI model who can help users set up new shops. You help them gain an understanding of what type of shop they should open in which cities, who the competitors can be, what the demands are for which products and more. You will follow the below guidelines strictly.
 		-
-		 You will be given as input a name, and you have to figure out if its a country/state/city/region/sub-region. 
+		 You will be given as input a name, and you have to figure out if its a country/state/city/town/locality. 
 		
 		- Note the precedence order,
 			country > state > city > region > sub-region.
 		
-		- For example, India (country) > Maharastra (state) > Mumbai (city) > waghbill (region) > ghodbunder road (sub-region)
+		- For example, India (country) > Maharastra (state) > Mumbai (city) > waghbill (town) > ghodbunder road (locality)
 									
 		- The heirarchy is, COUNTRY > STATE > CITY > REGION > SUB-REGION
 
 		- If it is a country, your output should be '5'.
 		
-		- If it is a state, your output should be '7'.
+		- If it is a state, your output should be '8'.
 		
-		- If it is a city, your output should be '10'.
+		- If it is a city, your output should be '12'.
 		
-		- If it is a region, your output should be '12'.
+		- If it is a town, your output should be '14'.
 		
-		- If it is a sub-region, your output should be '14'.
+		- If it is a locality, your output should be '16'.
 		
+		- So, if I say India, your output should be 5.
 		- This is the region: {inputRegion}
 
 		- You are interacting with a user, DO NOT LEAK OR TALK ABOUT INTERNAL STRUCTURES OR DATA OR PIPELINE OR ANY SENSITIVE INFO.
@@ -179,7 +178,7 @@ def detectIntentAndLocation(prompt: str, sharedHistory: str) -> str:
 		- Your need to analyse the history along with the prompt, to understand exactly what's going on, and answer as mentioned below.
 
 		- If the user has mentioned that they want to open a shop/business and mentioned the sub-region/region/city/state/country as well, then output,
-			intent: yes, location: <name of the city>
+			intent: yes, location: <name given>
 		
 		- If the user has mentioned that they want to open a shop but not mentioned the city in which they're looking for then output,
 			intent: yes, location: null
@@ -188,6 +187,9 @@ def detectIntentAndLocation(prompt: str, sharedHistory: str) -> str:
 			intent: null, location: null
 		
 		- Never deviate.
+
+		- The name can be for a country, a state, a city, a town, or a sub-region.
+
 		- This is the history: {sharedHistory}
 		- This is the current_prompt: {prompt}.
 
@@ -370,17 +372,18 @@ def geolocateListofCities(cities: list) -> list:
 		coordinatesList.append([cityName, location.latitude, location.longitude])
 	
 	return coordinatesList
-
+global prev_location
+prev_location = "New-Delhi,28.6139,77.2090,10"
 def main():
-	prev_location = ""
+	
 	while True:
 		try:
 			prompt = input()
 			# if not prompt:
 			# 	break
-			intent, location = detectIntentAndLocation(prompt, str(shared_history[-8:]))
+			intent, location = detectIntentAndLocation(prompt, str(shared_history[-10:]))
 			
-			if intent != "null" and location != "null": 								# The user wants to know about starting his own shop
+			if intent != "null" and location != "null":						# The user wants to know about starting his own shop
 				prev_location = location
 				lat, lon = get_coordinates(location)
 				output = generateTopData(location)
@@ -392,67 +395,52 @@ def main():
 					citiesList = parseTopDataWithRegex(output)
 					top5citiesCoordinatesFormatted = '\n'.join([','.join(map(str, pair)) for pair in geolocateListofCities(citiesList)])
 					
-					fp = open("C:\\Users\\Marsman\\genaihack_croma-main\\node_testing\\dashboard\\Backend\\_src\\latlon.txt", "w")
+					fp = open(r"/home/purge/genaihack_croma/node_testing/dashboard/Backend/_src/latlon.txt", "w")
 					fp.write(f"{location.capitalize()},{float(lat)},{float(lon)},{zoomLevel} \n{top5citiesCoordinatesFormatted}")
 					fp.close()
 					
-					# print(re.sub(re.escape(re.findall('```data.*```', output, re.DOTALL)[0]), ' ', output, flags=re.DOTALL)+"\n~$~")
-					# print(99999)
 					print(generateNormalContent(prompt)+"\n~$~")
-					# sys.stdout.flush()
 				
 				except IndexError:												# this implies lowest level of granularity
-					# print(1111)
 					print(output+"\n~$~")
-					# sys.stdout.flush()
-			
-			else:
-				if intent != "null" and location == "null":
-					lat, lon = get_coordinates(prev_location)
-					output = generateTopData(prev_location)
-					zoomLevel = find_zoom_level(prev_location)
 				
-					# print(zoomLevel)
-
-					try:
-						citiesList = parseTopDataWithRegex(output)
-						top5citiesCoordinatesFormatted = '\n'.join([','.join(map(str, pair)) for pair in geolocateListofCities(citiesList)])
-						
-						fp = open("C:\\Users\\Marsman\\genaihack_croma-main\\node_testing\\dashboard\\Backend\\_src\\latlon.txt", "w")
-						fp.write(f"{prev_location.capitalize()},{float(lat)},{float(lon)},{zoomLevel} \n{top5citiesCoordinatesFormatted}")
-						fp.close()
-						
-						# print(re.sub(re.escape(re.findall('```data.*```', output, re.DOTALL)[0]), ' ', output, flags=re.DOTALL))
-						# print(99999)
-						print(generateNormalContent(prompt)+"\n~$~")
-						# sys.stdout.flush()
+			
+			elif intent != "null" and location == "null":
+				print('here')
+				lat, lon = get_coordinates(prev_location)
+				output = generateTopData(prev_location)
+				zoomLevel = find_zoom_level(prev_location)
+			
+				try:
+					citiesList = parseTopDataWithRegex(output)
+					top5citiesCoordinatesFormatted = '\n'.join([','.join(map(str, pair)) for pair in geolocateListofCities(citiesList)])
 					
-					except IndexError:												# this implies lowest level of granularity
-						# print(1111)
-						print(output+"\n~$~")
-					# sys.stdout.flush()
-
-				else:
-					if location!="null":
-						prev_location = location
-					# lat, lon = get_coordinates(location)
-					# zoomLevel = find_zoom_level(location)
-					# with open("C:\\Users\\Marsman\\genaihack_croma-main\\node_testing\\dashboard\\Backend\\_src\\latlon.txt", "w") as fp:
-					# 	fp.write(f"{float(lat)},{float(lon)},{zoomLevel}")
-					# fp.close()
-					# print(777777)
+					fp = open(r"/home/purge/genaihack_croma/node_testing/dashboard/Backend/_src/latlon.txt", "w")
+					fp.write(f"{prev_location.capitalize()},{float(lat)},{float(lon)},{zoomLevel} \n{top5citiesCoordinatesFormatted}")
+					fp.close()
+					
 					print(generateNormalContent(prompt)+"\n~$~")
 				
-				# sys.stdout.flush()
-		
-		except Exception as e:
-			# print(222222)
-			print(e+"\n~$~")
-			print("There was an error processing your last prompt, please try again."+"\n~$~") 							# or tell the user to repharase
-			# sys.stdout.flush()
+				except IndexError:												# this implies lowest level of granularity
+					print(output+"\n~$~")
+			
+			else:
+				if location != "null":
+					print(prev_location)
+					prev_location = location
 
+					lat, lon = get_coordinates(prev_location)
+					zoomLevel = find_zoom_level(prev_location)
+					with open("/home/purge/genaihack_croma/node_testing/dashboard/Backend/_src/latlon.txt", "w") as fp:
+						fp.write(f"{float(lat)},{float(lon)},{zoomLevel}")
+				print(generateNormalContent(prompt)+"\n~$~")
+				
+			
+		except Exception as e:
+			
+			print("There was an error processing your last prompt, please try again."+"\n~$~") 							# or tell the user to repharase
+			
 if __name__=="__main__":
-	# print(output_init_normal)	
 	with open('latlon.txt', 'w') as fp:
-		fp.write('New-Delhi,28.6139,77.2090,10')
+		fp.write(prev_location)
 	main()

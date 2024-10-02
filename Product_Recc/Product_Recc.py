@@ -77,7 +77,7 @@ def get_product_name(output):
     print("Links to the products: ")
     for i in products:
         print(i+": " )
-        print("https://www.croma.com"+get_product_link("_src/Merged_file.csv", i[1:-2]))
+        print("https://www.croma.com"+get_product_link("./Merged_file.csv", i[1:-2]))
     print("~$~")
 
 
@@ -94,7 +94,7 @@ model = genai.GenerativeModel(
 # TODO Make these files available on the local file system
 # You may need to update the file paths
 files = [
-  upload_to_gemini("_src/final.csv", mime_type="text/csv"),
+  upload_to_gemini("./final.csv", mime_type="text/csv"),
 ]
 
 # Some files have a processing delay. Wait for them to be ready.

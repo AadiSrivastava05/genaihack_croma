@@ -1,0 +1,5 @@
+plotly
+dash
+datetime
+prophet
+numpy==1.10.1

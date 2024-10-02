@@ -8,7 +8,9 @@ import 'leaflet/dist/leaflet.css';
 import './styles.css';
 
 const INITIAL_MAP_CENTER = { lat: 28.6139, lng: 77.2090, zoom: 10 }; // New Delhi coordinates
-const SOCKET_URL = 'http://localhost:5001';
+const SOCKET_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://yourdomain.com' 
+  : 'http://localhost:5001';
 
 // Fix Leaflet icon issue
 delete L.Icon.Default.prototype._getIconUrl;
@@ -53,7 +55,7 @@ const Dashboard = () => {
     });
 
     newSocket.on('initial_message', (data) => {
-      setChatMessages([{ sender: 'Cromax', message: data.response }]);
+      setChatMessages([{ sender: 'Cromax', message: data.response + "\n" }]);
     });
 
     newSocket.on('chatbot_response', (data) => {
@@ -100,7 +102,7 @@ const Dashboard = () => {
     setIsLoading(true);
     setError(null);
 
-    setChatMessages(prevMessages => [...prevMessages, { sender: 'You', message: userInput }]);
+    setChatMessages(prevMessages => [...prevMessages, { sender: 'You', message: userInput + "\n" }]);
     
     socket.emit('chatbot_message', userInput);
 
@@ -158,6 +160,9 @@ const Dashboard = () => {
           </Link>
           <Link to="/home/how-to-use" className="menu-item">
             <i className="fas fa-question-circle"></i> How to use
+          </Link>
+          <Link to="/home/barchart" className="menu-item">
+            <i className="fas fa-question-circle"></i> Bar Chart
           </Link>
         </nav>
 
@@ -221,31 +226,38 @@ const Dashboard = () => {
                 <MapComponent />
                 {mapData && (
                   <>
-                    <Marker position={[mapData.lat, mapData.lng]}>
-                      <Tooltip>{mapData.name}</Tooltip> {/* Tooltip for hover effect */}
-                    </Marker>
-                    <Marker position={[mapData.lat5, mapData.lng5]}>
-                      <Tooltip>{mapData.name5}</Tooltip>
-                    </Marker>
-                    <Marker position={[mapData.lat4, mapData.lng4]}>
-                      <Tooltip>{mapData.name4}</Tooltip>
-                    </Marker>
-                    <Marker position={[mapData.lat3, mapData.lng3]}>
-                      <Tooltip>{mapData.name3}</Tooltip>
-                    </Marker>
-                    <Marker position={[mapData.lat2, mapData.lng2]}>
-                      <Tooltip>{mapData.name2}</Tooltip>
-                    </Marker>
-                    <Marker position={[mapData.lat1, mapData.lng1]}>
-                      <Tooltip>{mapData.name1}</Tooltip>
-                    </Marker>
+                  <Marker position={[mapData.lat, mapData.lng]}>
+                    <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+                      {mapData.name}
+                    </Tooltip>
+                  </Marker>
+                  <Marker position={[mapData.lat5, mapData.lng5]}>
+                    <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+                      {mapData.name5}
+                    </Tooltip>
+                  </Marker>
+                  <Marker position={[mapData.lat4, mapData.lng4]}>
+                    <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+                      {mapData.name4}
+                    </Tooltip>
+                  </Marker>
+                  <Marker position={[mapData.lat3, mapData.lng3]}>
+                    <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+                      {mapData.name3}
+                    </Tooltip>
+                  </Marker>
+                  <Marker position={[mapData.lat2, mapData.lng2]}>
+                    <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+                      {mapData.name2}
+                    </Tooltip>
+                  </Marker>
+                  <Marker position={[mapData.lat1, mapData.lng1]}>
+                    <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={false}>
+                      {mapData.name1}
+                    </Tooltip>
+                  </Marker>
+                </>
 
-                    {/* {mapData.otherCities.map((city, index) => (
-                      <Marker key={index} position={[city.lat, city.lng]}>
-                        <Popup>City {index + 1}</Popup>
-                      </Marker>
-                    ))} */}
-                  </>
                 )}
               </MapContainer>
             </div>

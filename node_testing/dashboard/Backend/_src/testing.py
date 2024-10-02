@@ -6,87 +6,68 @@ import time
 import select
 import json
 import traceback
+import logging
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-input_py_path = 'C:\\Users\\Marsman\\genaihack_croma-main\\node_testing\\dashboard\\Backend\\_src\\Chatbotcode.py'
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-process = subprocess.Popen(
-    ['python','-u', input_py_path], 
-    stdin=subprocess.PIPE, 
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True,
-    # bufsize=0  # Unbuffered
-)
+# Get the path to Chatbotcode.py from environment variable
+input_py_path = os.getenv('CHATBOT_CODE_PATH', '/home/purge/genaihack_croma/node_testing/dashboard/Backend/_src/Chatbotcode.py')
 
-
-import subprocess
-
-# def read_output(user_input):
-#     print("here1")
-#     # Write the user input to the process's stdin and get the output
-#     process.stdin.write(user_input+'\n')  # Send input followed by a newline (if needed by the process)
-#     # process.stdin.flush()  # Ensure all input is sent
-#     print("here2")
-
-#     # Read the output from stdout
-#     output = process.stdout.read()
-#     print("here3")
-
-#     error = process.stderr.read()
-#     print("here4")
-#     # Optionally read the error (if needed)
-
-#     return output, error
-
+# Start the Chatbotcode.py process
+try:
+    process = subprocess.Popen(
+        ['python3', '-u', input_py_path], 
+        stdin=subprocess.PIPE, 
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    logger.info(f"Started Chatbotcode.py process with PID {process.pid}")
+except Exception as e:
+    logger.error(f"Failed to start Chatbotcode.py process: {str(e)}")
+    raise
 
 def read_output(user_input):
-    # print("here1")
-    # Write the user input to the process's stdin and flush
-    process.stdin.write(user_input + '\n')
-    process.stdin.flush()  # Ensure the input is sent immediately
-    # print("here2")
+    try:
+        process.stdin.write(user_input + '\n')
+        process.stdin.flush()
 
-    # Collect multi-line output from the process
-    output = []
-    f = 0
-    # line = process.stdout.readline() # Read one line from stdout
-    # output.append(line)
-    while True:
-        # print("hi")
-        line = process.stdout.readline() # Read one line from stdout
-        
-        # process.stdout.readline()
-        # print("hey")
-        if line == '~$~\n':  # End if process terminates
-            break
-        if line:  # If there's a line of output, append it
-            # print("yo")
-            # print(line)
-            output.append(line)
-        else:
-            break  # No more output to read for now
+        output = []
+        while True:
+            line = process.stdout.readline()
+            if line == '~$~\n':
+                break
+            if line:
+                output.append(line)
+            else:
+                break
 
-    print(''.join(output))
-
-    # Optionally read the error (if any)
-    error = "process.stderr.readline()"  # You can also loop through stderr if needed
-    print("here4", error)
-
-    return ''.join(output), error
-
-
-
+        logger.info(f"Received output from Chatbotcode.py: {''.join(output)}")
+        return ''.join(output), ""
+    except Exception as e:
+        error_message = f"Error reading output: {str(e)}"
+        logger.error(error_message)
+        return "", error_message
 
 @app.route('/initial-output', methods=['GET'])
 def get_initial_output():
-    initial_output, error_output = "Hello, I am Cromax!\n", ""
-    print(f"Initial output from input.py: {initial_output}")
-    if error_output:
-        print(f"Error output: {error_output}")
-    return jsonify({"response": initial_output, "error": error_output})
+    try:
+        initial_output, error_output = "Hello, I am Cromax!", ""
+        logger.info(f"Initial output: {initial_output}")
+        return jsonify({"response": initial_output, "error": error_output})
+    except Exception as e:
+        error_message = f"Error in get_initial_output: {str(e)}"
+        logger.error(error_message)
+        return jsonify({"response": initial_output, "error": error_output})
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -122,7 +103,7 @@ def predict():
 
 def read_map_data():
     try:
-        with open("C:\\Users\\Marsman\\genaihack_croma-main\\node_testing\\dashboard\\Backend\\_src\\latlon.txt", "r") as fp:
+        with open("/home/purge/genaihack_croma/node_testing/dashboard/Backend/_src/latlon.txt", "r") as fp:
             lines = fp.readlines()
 
             if len(lines) > 1:
@@ -135,23 +116,23 @@ def read_map_data():
                 city5 = lines[5].split(',')
                 
                 new_coordinates = {
-                    'name': (main_city[0]),
+                    'name': main_city[0],
                     'lat': float(main_city[1]),
                     'lng': float(main_city[2]),
                     'zoom': int(main_city[3]),
-                    'name1': (city1[0]),
+                    'name1': city1[0],
                     'lat1': float(city1[1]),
                     'lng1': float(city1[2]),
-                    'name2': (city2[0]),
+                    'name2': city2[0],
                     'lat2': float(city2[1]),
                     'lng2': float(city2[2]),
-                    'name3': (city3[0]),
+                    'name3': city3[0],
                     'lat3': float(city3[1]),
                     'lng3': float(city3[2]),
-                    'name4': (city4[0]),
+                    'name4': city4[0],
                     'lat4': float(city4[1]),
                     'lng4': float(city4[2]),
-                    'name5': (city5[0]),
+                    'name5': city5[0],
                     'lat5': float(city5[1]),
                     'lng5': float(city5[2]),
                 }
@@ -159,23 +140,23 @@ def read_map_data():
                 main_city = lines[0].split(',')
                 
                 new_coordinates = {
-                    'name': (main_city[0]),
+                    'name': main_city[0],
                     'lat': float(main_city[1]),
                     'lng': float(main_city[2]),
                     'zoom': int(main_city[3]),
-                    'name1': (main_city[0]),
+                    'name1': main_city[0],
                     'lat1': float(main_city[1]),
                     'lng1': float(main_city[2]),
-                    'name2': (main_city[0]),
+                    'name2': main_city[0],
                     'lat2': float(main_city[1]),
                     'lng2': float(main_city[2]),
-                    'name3': (main_city[0]),
+                    'nam3': main_city[0],
                     'lat3': float(main_city[1]),
                     'lng3': float(main_city[2]),
-                    'name4': (main_city[0]),
+                    'name4': main_city[0],
                     'lat4': float(main_city[1]),
                     'lng4': float(main_city[2]),
-                    'name5': (main_city[0]),
+                    'name5': main_city[0],
                     'lat5': float(main_city[1]),
                     'lng5': float(main_city[2]),
                 }

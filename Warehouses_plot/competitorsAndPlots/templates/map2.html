@@ -121,7 +121,7 @@
             var circle = L.circle([lat, lng], {
                 color: 'red',
                 fillColor: '#f03',
-                fillOpacity: 0.5,
+                fillOpacity: 0,
                 radius: 5000
             }).addTo(map);
         });
@@ -163,10 +163,10 @@
                 scaleCoordinates(bboxTRightLat, bboxBleftLng, centerLat, centerLng, scaleFactor)
             ], {
                 color: 'blue',
-                weight: 0.5,
-                opacity: 0.3,
+                weight: 0,
+                opacity: 0,
                 fillColor: 'blue',
-                fillOpacity: 0.5
+                fillOpacity: 0
             }).addTo(map);
         });
                     

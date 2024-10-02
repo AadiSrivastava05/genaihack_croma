@@ -10,6 +10,7 @@ import ForecastDemand from './ForecastDemand';
 import HowToUse from './HowToUse';
 import Settings from './Settings';
 import Dashboard from './Dashboard';
+import BarChart from './BarChart';
 
 function App() {
   const [user, setUser] = React.useState(null);
@@ -39,6 +40,7 @@ function App() {
           <Route path="forecast-demand" element={<ForecastDemand />} />
           <Route path="how-to-use" element={<HowToUse />} />
           <Route path="settings" element={<Settings />} />
+          <Route path = "barchart" element={<BarChart />} />
         </Route>
 
         <Route path="/" element={<Navigate to={user ? "/home" : "/login"} />} />
