@@ -28,7 +28,7 @@ with open('commercial_land_data.txt', 'r') as fp:
 headers0 = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36"
 }
-i = 13348
+i = 0
 for url in links[i:]:
     i += 1
     try:
