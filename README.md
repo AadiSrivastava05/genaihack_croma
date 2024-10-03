@@ -12,11 +12,10 @@ Cromax is a `genAI` based application, it uses natural language to understand wh
 
 Here are some key features of Cromax
 ---
-
-1. 
-2. 
-3. 
-
+1. Chatbot that controls web elements
+2. Demand Forecasting
+3. Competitor Analysis
+4. Product recommendation LLM
 ---
 
 <add screenshots>
