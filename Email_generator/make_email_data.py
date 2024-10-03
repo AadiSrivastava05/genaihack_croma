@@ -2,18 +2,14 @@ import os
 import pandas as pd
 import re
 
-# Path to the folder containing the .txt files
-folder_path = 'C:/Users/Marsman/genaihack_croma-main/getting_data_set/promotional_emails'
+folder_path = '' # Path to the folder containing the .txt files foe emails
 
-# Initialize an empty list to store file contents and file names
 data = []
 
-# Loop through all .txt files in the folder
 for filename in os.listdir(folder_path):
     if filename.endswith('.txt'):
         file_path = os.path.join(folder_path, filename)
         
-        # Open the file and read its contents
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
             br = 0
@@ -35,14 +31,10 @@ for filename in os.listdir(folder_path):
             
 
         
-        # Append the content and the file name (without extension) to the data list
         data.append({'disount': discount_present, 'product': product_present, 'msp': MSP_present, 'text': content})
 
-# Create a DataFrame from the data list
 df = pd.DataFrame(data)
 
-# Save the DataFrame to a CSV file (optional)
 df.to_csv('email_dataset.csv', index=False)
 
-# Show the first few rows of the DataFrame
 print(df.head())
