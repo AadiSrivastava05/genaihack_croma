@@ -3,7 +3,7 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 import re
 from supabase import create_client, Client
 
-API_KEY = "AIzaSyDgtJZg8o9fYUlJm9xeYNkRwzQ2nbZiHQI"  #yo dont leak my api key
+API_KEY = ""                                     # Enter your API key here
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-pro')
 
