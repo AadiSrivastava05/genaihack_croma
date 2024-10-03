@@ -18,8 +18,12 @@ Here are some key features of Cromax
 4. Product recommendation LLM
 ---
 
-<add screenshots>
-
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <img src="./images/Cromax.jpeg" style="width: 48%; margin-bottom: 10px;" />
+  <img src="./images/analytics.jpeg" style="width: 48%; margin-bottom: 10px;" />
+  <img src="./images/competitors.jpeg" style="width: 48%; margin-top: 10px;" />
+  <img src="./images/demand.jpeg" style="width: 48%; margin-top: 10px;" />
+</div>
 
 ---
 
