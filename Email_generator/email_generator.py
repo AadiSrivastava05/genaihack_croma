@@ -1,7 +1,6 @@
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 import re
-from supabase import create_client, Client
 
 API_KEY = ""                                     # Enter your API key here
 genai.configure(api_key=API_KEY)
