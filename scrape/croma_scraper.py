@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 # Open and read the HTML file
-with open('/Users/mahakmehra/Product Recommendation Chatbot/phonewear.html', 'r') as f:
+with open('', 'r') as f:
     content = f.read()
 
 # Parse the HTML with BeautifulSoup
@@ -45,7 +45,7 @@ df = pd.DataFrame({
     'Product Price': product_prices,
     'Product Link': product_links
 })
-df.to_excel('/Users/mahakmehra/Documents/product_data.xlsx', index=False)
+df.to_excel('./product_data.xlsx', index=False)
 
 
 print("Data successfully written to product_data.xlsx")
