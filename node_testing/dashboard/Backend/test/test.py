@@ -35,8 +35,8 @@ def extract_location(user_prompt: str):
 '''
 
 def query_supabase(location: str):
-	url: str = "https://ajkgqdvxmueqxtuvcjho.supabase.co"
-	key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqa2dxZHZ4bXVlcXh0dXZjamhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU1NTYyOTcsImV4cCI6MjA0MTEzMjI5N30.cwmfECvEYqu6FZXRFqcTw1zD-H6NoHkG_etfqPZ-hDw"
+	url: str = ""
+	key: str = ""
 	supabase: Client = create_client(url, key)
 	search_location = location
 	response = supabase.table("PlotData").select("*").ilike("city", f"*{search_location}*").execute()
