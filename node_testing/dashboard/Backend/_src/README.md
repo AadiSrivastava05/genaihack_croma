@@ -6,6 +6,10 @@ We're using two tech stacks here, a `flask` based and a `node.js` based. After r
 
 Note that, you have python3 install specifically. 
 
+## Before running
+
+Make sure to add the google's `gemini's` API key in the [chatbot's source code](./Chatbotcode.py)
+
 ## Requirements
 
 The required libraries can be installed via,
