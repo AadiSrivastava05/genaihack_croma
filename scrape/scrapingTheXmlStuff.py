@@ -1,6 +1,6 @@
 '''
 import re
-with open('C:\\Users\\hello\\Downloads\\srp_warehouse_godown.xml\\srp_warehouse_godown.xml', 'r') as fp:
+with open('srp_warehouse_godown.xml', 'r') as fp:
 	links = fp.readlines()
 
 stripped = [i.strip() for i in links]
@@ -46,7 +46,7 @@ import re
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-cred = credentials.Certificate("/home/purge16/Desktop/GHack/apikey.json") 
+cred = credentials.Certificate("apikey.json") 
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
