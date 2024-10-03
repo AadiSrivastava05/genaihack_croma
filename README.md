@@ -34,5 +34,6 @@ Install the required dependencies from each folder using
 
 - Ensure that you have `node` and `npm` install.
 
-<add steps here>
----
+### Running the node server
+
+Head to [Dashbord](./node_testing/Dashbord) to get the steps for running the noder server.
