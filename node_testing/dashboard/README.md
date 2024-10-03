@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Servers
+
+There are 2 servers here, [chart server](./chartServer.js) and the [main server](./server.js)
+
 ## Available Scripts
 
 In the project directory, you can run:
