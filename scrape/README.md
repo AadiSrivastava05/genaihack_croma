@@ -4,4 +4,4 @@ This repo contains all the code we used for scraping the web and getting the dat
 
 ## API keys
 
-The API keys for supabase has been redacted.
+The API keys for `supabase` and `firebase` have been redacted.
