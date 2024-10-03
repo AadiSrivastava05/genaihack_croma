@@ -9,3 +9,9 @@ To use this code, you need to add 3 keys
 1. developerKey
 2. client_secret
 3. client_id
+
+## install the requirements
+
+Run the following command to install all the requirements
+
+    pip install -r requirements.txt
