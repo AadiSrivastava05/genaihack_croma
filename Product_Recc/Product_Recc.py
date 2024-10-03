@@ -5,9 +5,7 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 import pandas as pd
 import re
 
-
-
-genai.configure(api_key=")
+genai.configure(api_key="") # add API key here
 
 def upload_to_gemini(path, mime_type=None):
   """Uploads the given file to Gemini.
