@@ -39,8 +39,8 @@ Install the required dependencies from each folder using (the necessary instruct
 
 ### Running the node server
 
-Head to [Dashbord](./node_testing/Dashbord) to get the steps for running the noder server.
+Head to [Dashbord](./node_testing/dashbord) to get the steps for running the noder server.
 
 ### Running the python server
 
-Head to [python source](./node_testing/Dashboard/Backend/_src) to find steps to run the flask backend
+Head to [python source](./node_testing/dashboard/Backend/_src) to find steps to run the flask backend
