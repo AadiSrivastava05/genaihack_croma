@@ -3,16 +3,12 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 import re
 from supabase import create_client, Client
 
-API_KEY = "AIzaSyDgtJZg8o9fYUlJm9xeYNkRwzQ2nbZiHQI"  #yo dont leak my api key
+API_KEY = ""  												# add api key here
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-pro')
 chat = model.start_chat(history=[])
 
 def detect_intent_and_location(user_prompt: str):
-	# API_KEY_intent = "AIzaSyCmMWR7h-OqlFnjodbsAf8JDXzen0z5aqg"  #yo dont leak my api key
-	# genai.configure(api_key=API_KEY_intent)
-	# model_intent = genai.GenerativeModel('gemini-pro')
-	# chat_intent = model_intent.start_chat(history=[])
 
 	response = model.generate_content(f"Determine if this user is asking for warehouse/godown/plot details in a location and if they are then extract the location. Respond with 'Intent: <intent>, Location: <location>' format. The intent can be either a 'yes' or a 'no' depending on whether the user wants to see the warehouse details in a specific location or not, respectively. This is the prompt: {user_prompt}")
 
