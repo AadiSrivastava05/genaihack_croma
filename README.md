@@ -23,7 +23,7 @@ Here are some key features of Cromax
 
 ---
 
-## steps to run the development server
+## Steps to run the development server
 
 This website has not been hosted yet, to run it locally follow these steps.
 
