@@ -24,11 +24,11 @@ Here are some key features of Cromax
 
 ---
 
-## steps to run
+## steps to run the development server
 
 This website has not been hosted yet, to run it locally follow these steps.
 
-Install the required dependencies from each folder using 
+Install the required dependencies from each folder using (the necessary instructions have been given in each directory)
 
 		pip install -r requirements.txt
 
@@ -37,3 +37,7 @@ Install the required dependencies from each folder using
 ### Running the node server
 
 Head to [Dashbord](./node_testing/Dashbord) to get the steps for running the noder server.
+
+### Running 
+
+Head to [python source](./node_testing/Dashboard/Backend/_src) to find steps to run the flask backend
