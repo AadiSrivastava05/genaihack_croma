@@ -8,15 +8,14 @@ from datetime import datetime, timedelta
 from prophet import Prophet
 from googleapiclient.discovery import build
 
-# Reddit API setup
+# Reddit API setup --> FILL IN THE REDACTED VALUES
 reddit = praw.Reddit(
-    client_id='SkU-NWalPVvpptffRjcYSQ',
-    client_secret='-ag_R_M2VcgyYJXIYLyVkbyFk9YLsw',
-    user_agent='demand'
+    client_id='',
+    client_secret='',
+    user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'  # change user-agent as per computer
 )
 
-# YouTube API setup
-youtube = build('youtube', 'v3', developerKey='AIzaSyBW4NnpsbAjXbOfZ7r16x9NicsH00X00mA')
+youtube = build('youtube', 'v3', developerKey='') # enter your developer key here 
 
 def normalize_score(score, min_score, max_score):
     if min_score == max_score:
@@ -99,26 +98,19 @@ def fetch_youtube_data(search_term, days=30):
         return pd.DataFrame(columns=['ds', 'youtube_score'])
 
 def combine_data(reddit_data, youtube_data):
-    # Normalize Reddit scores
     if not reddit_data.empty:
         reddit_data = normalize_dataframe(reddit_data, 'reddit_score')
     else:
         reddit_data['normalized_score'] = 0
 
-    # Normalize YouTube scores
     if not youtube_data.empty:
         youtube_data = normalize_dataframe(youtube_data, 'youtube_score')
     else:
         youtube_data['normalized_score'] = 0
 
-    # Combine the normalized data
     combined = pd.merge(reddit_data, youtube_data, on='ds', how='outer').fillna(0)
     
-    # Calculate the average of normalized scores
     combined['y'] = (combined['normalized_score_x'] + combined['normalized_score_y']) / 2
-    
-    # Ensure the final score is between 1 and 100
-    # combined['y'] = combined['y'].clip(1, 100)
     
     return combined[['ds', 'y']]
 
