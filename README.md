@@ -39,7 +39,7 @@ Install the required dependencies from each folder using (the necessary instruct
 
 ### Running the node server
 
-Head to [Dashbord](./node_testing/dashbord) to get the steps for running the noder server.
+Head to [Dashbord](./node_testing/dashboard) to get the steps for running the noder server.
 
 ### Running the python server
 
