@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from supabase import create_client, Client
 
-url: str = "https://ajkgqdvxmueqxtuvcjho.supabase.co"
-key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqa2dxZHZ4bXVlcXh0dXZjamhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU1NTYyOTcsImV4cCI6MjA0MTEzMjI5N30.cwmfECvEYqu6FZXRFqcTw1zD-H6NoHkG_etfqPZ-hDw"
+url: str = ""
+key: str = ""
 
 supabase: Client = create_client(url, key)
 
