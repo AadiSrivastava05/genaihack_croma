@@ -4,7 +4,7 @@ This is a product recommendation model, which runs on the general user's side of
 
 ## Add API key
 
-You will need to add a `gemini` API key in the [source code](./Product_Recc/Product_Recc.py) for this to work.
+You will need to add a `gemini` API key in the [source code](./Product_Recc.py) for this to work.
 
 ## Additional considerations
 
