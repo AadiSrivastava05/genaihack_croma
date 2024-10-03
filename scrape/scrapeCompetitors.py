@@ -18,8 +18,8 @@ headers = {
 }
 
 # matching_links = [s for s in links if re.search(city, s, re.IGNORECASE)] 
-i = 40637
-for url in links[40637:]:
+i = 0
+for url in links[i:]:
     try:
         print(i)              
         webpage = requests.get(url.strip(), headers=headers).content
