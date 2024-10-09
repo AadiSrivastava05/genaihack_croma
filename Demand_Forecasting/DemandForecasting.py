@@ -5,21 +5,22 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output, State
 import praw
 from datetime import datetime, timedelta
-from prophet import Prophet
 from googleapiclient.discovery import build
+from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 # Reddit API setup --> FILL IN THE REDACTED VALUES
 reddit = praw.Reddit(
     client_id='',
     client_secret='',
-    user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'  # change user-agent as per computer
+    user_agent='demand'
 )
 
-youtube = build('youtube', 'v3', developerKey='') # enter your developer key here 
+# YouTube API setup --> FILL IN THE DEVELOPER KEY
+youtube = build('youtube', 'v3', developerKey='')
 
 def normalize_score(score, min_score, max_score):
     if min_score == max_score:
-        return 50  # If all scores are the same, return the middle value
+        return 50
     return 1 + (score - min_score) * 99 / (max_score - min_score)
 
 def normalize_dataframe(df, score_column):
@@ -36,7 +37,6 @@ def fetch_reddit_data(search_term, days=365):
     subreddit = reddit.subreddit(search_term)
     try:
         posts = subreddit.search(search_term, limit=10000, sort='new', time_filter='year')
-        
         for post in posts:
             post_date = datetime.fromtimestamp(post.created_utc)
             if start_date <= post_date <= end_date:
@@ -55,7 +55,7 @@ def fetch_reddit_data(search_term, days=365):
         print(f"Error fetching Reddit data: {e}")
         return pd.DataFrame(columns=['ds', 'reddit_score'])
 
-def fetch_youtube_data(search_term, days=30):
+def fetch_youtube_data(search_term, days=300):
     end_date = datetime.now()
     start_date = end_date - timedelta(days=days)
     
@@ -67,7 +67,7 @@ def fetch_youtube_data(search_term, days=30):
             order='date',
             publishedAfter=start_date.isoformat() + 'Z',
             publishedBefore=end_date.isoformat() + 'Z',
-            maxResults=10000
+            maxResults=50  # Limit the max results per API request
         )
         response = request.execute()
         
@@ -101,15 +101,14 @@ def combine_data(reddit_data, youtube_data):
     if not reddit_data.empty:
         reddit_data = normalize_dataframe(reddit_data, 'reddit_score')
     else:
-        reddit_data['normalized_score'] = 0
+        reddit_data['normalized_score_x'] = 0
 
     if not youtube_data.empty:
         youtube_data = normalize_dataframe(youtube_data, 'youtube_score')
     else:
-        youtube_data['normalized_score'] = 0
+        youtube_data['normalized_score_y'] = 0
 
     combined = pd.merge(reddit_data, youtube_data, on='ds', how='outer').fillna(0)
-    
     combined['y'] = (combined['normalized_score_x'] + combined['normalized_score_y']) / 2
     
     return combined[['ds', 'y']]
@@ -118,13 +117,15 @@ def train_model_and_forecast(data, forecast_days):
     if len(data) < 2:
         return None, None
     
-    model = Prophet(yearly_seasonality=True, weekly_seasonality=True, daily_seasonality=False)
-    model.fit(data)
+    model = SARIMAX(data['y'], order=(1, 1, 1), seasonal_order=(1, 1, 1, 12))
+    model_fit = model.fit()
     
-    future_dates = model.make_future_dataframe(periods=forecast_days)
-    forecast = model.predict(future_dates)
-    
-    return model, forecast.tail(forecast_days)[['ds', 'yhat']]
+    forecast = model_fit.forecast(steps=forecast_days)
+    last_date = data['ds'].iloc[-1]
+    forecast_dates = pd.date_range(last_date, periods=forecast_days+1, freq='D')[1:]
+
+    forecast_df = pd.DataFrame({'ds': forecast_dates, 'yhat': forecast})
+    return forecast_df
 
 app = Dash(__name__)
 
@@ -161,11 +162,8 @@ def update_dashboard(n_clicks, search_term, forecast_days):
         if combined_data.empty:
             return go.Figure(), f"No data found for '{search_term}'. Try a different product name."
         
-        if len(combined_data) < 2:
-            return go.Figure(), f"Not enough data for '{search_term}' to make a forecast. Try a more popular product."
-        
-        model, forecast = train_model_and_forecast(combined_data, forecast_days)
-        if model is None:
+        forecast = train_model_and_forecast(combined_data, forecast_days)
+        if forecast is None:
             return go.Figure(), f"Unable to create a forecast for '{search_term}'. Not enough data."
         
         fig = go.Figure()
@@ -180,9 +178,6 @@ def update_dashboard(n_clicks, search_term, forecast_days):
             autosize=True,
             margin=dict(l=50, r=50, t=50, b=50, autoexpand=True),
         )
-        
-        fig.update_xaxes(automargin=True)
-        fig.update_yaxes(automargin=True)
         
         return fig, None
     except Exception as e:
