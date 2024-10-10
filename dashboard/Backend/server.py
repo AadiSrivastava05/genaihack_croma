@@ -6,7 +6,7 @@ import pandas as pd
 import re
 
 # Configure the generative model
-genai.configure(api_key="AIzaSyDgtJZg8o9fYUlJm9xeYNkRwzQ2nbZiHQI") # add API key here
+genai.configure(api_key="") # add API key here
 app = Flask(__name__)
 CORS(app)
 

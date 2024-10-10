@@ -49,7 +49,7 @@ user_agent = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit
 geolocator = Nominatim(user_agent=user_agent)
 
 # initialising genai
-API_KEY = "AIzaSyDgtJZg8o9fYUlJm9xeYNkRwzQ2nbZiHQI"   # Enter your API key here
+API_KEY = ""   # Enter your API key here
 genai.configure(api_key=API_KEY)
 
 model1 = genai.GenerativeModel('gemini-pro')

@@ -44,7 +44,7 @@ def get_competitor_data(city_name):
 		bottom_left, top_right = get_bounding_box(latitude, longitude, distance_km)
 
 	url = 'https://api.geoapify.com/v2/places'
-	params = {'categories': 'commercial.elektronics', 'filter': f"rect:{bottom_left.longitude},{bottom_left.latitude},{top_right.longitude},{top_right.latitude}", 'limit': 20, 'apiKey':'085e718f0205455db5cac133ebf11b34'}
+	params = {'categories': 'commercial.elektronics', 'filter': f"rect:{bottom_left.longitude},{bottom_left.latitude},{top_right.longitude},{top_right.latitude}", 'limit': 20, 'apiKey':''} # enter API key here
 	resp = requests.get(url=url, params=params)
 	data = resp.json()
 	return data
