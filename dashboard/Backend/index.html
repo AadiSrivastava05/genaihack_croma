@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Chat with the Shopkeeper Bot</h1>
+    <form id="chat-form">
+        <input type="text" id="prompt" name="prompt" placeholder="Ask for products..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="chat-output">
+        <h2>Response:</h2>
+        <p id="response"></p>
+
+        <h2>Product Links:</h2>
+        <div id="product-links"></div>
+    </div>
+
+    <script>
+        $('#chat-form').on('submit', function(e) {
+            e.preventDefault();
+            
+            var prompt = $('#prompt').val();
+            $.ajax({
+                type: 'POST',
+                url: '/ask',
+                data: { prompt: prompt },
+                success: function(data) {
+                    $('#response').text(data.response);
+                    $('#product-links').empty();
+                    
+                    // Create buttons for product links
+                    data.products.forEach(function(product) {
+                        var button = $('<a>') 
+                            .attr('href', product.link)
+                            .text(product.name)
+                            .attr('target', '_blank')
+                            .css({
+                                'display': 'block',
+                                'margin': '10px 0',
+                                'padding': '10px',
+                                'background-color': '#4CAF50',
+                                'color': 'white',
+                                'text-decoration': 'none',
+                                'border-radius': '5px'
+                            });
+                        $('#product-links').append(button);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

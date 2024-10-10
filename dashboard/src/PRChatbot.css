@@ -1,0 +1,103 @@
+/* Root layout styling */
+.prchatbot-app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Chatbot container */
+.prchatbot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1; 
+    background-color: #f2f2f2;
+    width: 100%; /* Prevents overflow outside the container */
+    max-width: 100vw; /* Ensures it doesn't go beyond viewport width */
+}
+
+/* Header */
+.prchatbot-header {
+    background-color: #00524e;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prchatbot-search-bar {
+    background-color: #e6e6e6;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+/* Chat messages area */
+.prchatbot-messages {
+    flex-grow: 1; /* Ensures the message area expands */
+    overflow-y: auto; /* Enables scrolling */
+    padding: 20px;
+    background-color: #d8d8d8;
+}
+
+.prchatbot-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.prchatbot-message.you {
+    background-color: #009688;
+    color: white;
+    text-align: right;
+}
+
+.prchatbot-message.shopkeeper {
+    background-color: #ffffff;
+    color: black;
+    text-align: left;
+}
+
+/* Product links in chatbot response */
+.prchatbot-product-link {
+    display: block;
+    color: #00524e;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.prchatbot-product-link:hover {
+    text-decoration: underline;
+}
+
+/* Chat input */
+
+.prchatbot-input {
+    display: flex;
+    padding: 10px;
+    background-color: #e6e6e6;
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.prchatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.prchatbot-input button {
+    padding: 10px 20px;
+    background-color: #00524e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
