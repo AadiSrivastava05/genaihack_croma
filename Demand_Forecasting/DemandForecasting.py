@@ -10,13 +10,13 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 # Reddit API setup --> FILL IN THE REDACTED VALUES
 reddit = praw.Reddit(
-    client_id='pR7-_ABfQacFRs-Xk5zApg',
-    client_secret='ZbuPOkiTkSKZNTapz5N03Dw-1zXViA',
+    client_id='',
+    client_secret='',
     user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
 )
 
 # YouTube API setup --> FILL IN THE DEVELOPER KEY
-youtube = build('youtube', 'v3', developerKey='AIzaSyBW4NnpsbAjXbOfZ7r16x9NicsH00X00mA')
+youtube = build('youtube', 'v3', developerKey='')
 
 # Normalization functions
 def normalize_score(score, min_score, max_score):
