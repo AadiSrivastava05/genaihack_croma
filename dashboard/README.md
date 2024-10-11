@@ -2,9 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Servers
+## Running the server
 
-There are 2 servers here, [chart server](./chartServer.js) and the [main server](./server.js)
+Run this command to start the development server in your device, and test our features!
+
+    npm start
+
 
 ## Available Scripts
 
