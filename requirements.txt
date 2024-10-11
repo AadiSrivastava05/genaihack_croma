@@ -1,0 +1,16 @@
+flask
+flask_cors
+google.generativeai
+pandas
+flask_socketio
+geopy
+geopandas
+urllib3
+numpy
+plotly
+dash
+praw
+datetime
+google-api-python-client-stubs
+statsmodel
+dotenv
