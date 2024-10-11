@@ -39,8 +39,8 @@ Install the required dependencies from each folder using (the necessary instruct
 
 ### Running the node server
 
-Head to [Dashbord](./node_testing/dashboard) to get the steps for running the noder server.
+Head to [Dashbord](./dashboard) and use the command below to run the server
 
-### Running the python server
+		npm start
 
-Head to [python source](./node_testing/dashboard/Backend/_src) to find steps to run the flask backend
+This will launch all the applications. Give it some time to load properly, then you can start playing around with it.
