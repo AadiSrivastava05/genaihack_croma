@@ -104,10 +104,10 @@ def handle_plot_data_request(data):
 		headers = CaseInsensitiveDict()
 		headers["Accept"] = "application/json"
 
-		url: str = "https://ajkgqdvxmueqxtuvcjho.supabase.co"
-		key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqa2dxZHZ4bXVlcXh0dXZjamhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU1NTYyOTcsImV4cCI6MjA0MTEzMjI5N30.cwmfECvEYqu6FZXRFqcTw1zD-H6NoHkG_etfqPZ-hDw"
+		url: str = ""
+		key: str = ""
 
-		apiKey = '085e718f0205455db5cac133ebf11b34'
+		apiKey = ''
 		supabase: Client = create_client(url, key)
 
 		response = supabase.table('CommercialLandCoords').select("*").ilike('city', f"*{city_name}*").execute().data
