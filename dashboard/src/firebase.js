@@ -1,9 +1,9 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
+// Config settings
 const firebaseConfig = {
+  // pls to not steal API keys, won't do either of us much good :)
   apiKey: "AIzaSyBk45b5SJVHoylMbLI7FIqlucJDVDLw7wI",
   authDomain: "croma-genai-ex.firebaseapp.com",
   projectId: "croma-genai-ex",
