@@ -43,4 +43,4 @@ Head to [Dashbord](./dashboard) and use the command below to run the server
 
 		npm start
 
-This will launch all the applications. Give it some time to load properly, then you can start playing around with it.
+This will launch all the applications. Give it some time to load properly and then you can start playing around with it.
